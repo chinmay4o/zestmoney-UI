@@ -1,0 +1,504 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tropiline:wght@400;500;600;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body p {
+  font-family: Inter;
+}
+
+.widget_trigger {
+  font-size: 15px;
+  font-weight: 600;
+  font-style: normal;
+  padding: 10px;
+  height: 30px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.zestmoney-backdrop {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-animation: appear 0.4s ease-in-out;
+          animation: appear 0.4s ease-in-out;
+}
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.zestmoney-backdrop .modal {
+  width: 840px;
+  height: 580px;
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+
+.zestmoney-backdrop .zestmoney_modal {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside {
+  position: relative;
+  overflow-y: auto;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside::-webkit-scrollbar {
+  width: 2px;
+  background-color: #dcdcdc;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside::-webkit-scrollbar-thumb {
+  background: #949494;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .close-btn {
+  font-size: 11px;
+  border-radius: 50%;
+  border: 1px solid #737373;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .close-btn span {
+  position: absolute;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .logo {
+  display: block;
+  width: 80px;
+  margin: 0 auto;
+  height: 50px;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.3rem;
+  color: #00dc00;
+  font-weight: bold;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .zestmoney-intro {
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: #033418;
+  font-family: "Tropiline";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .intrest {
+  width: 347px;
+  height: 46px;
+  background-color: #E2F7EB;
+  border-radius: 32px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 0.8fr 1fr;
+      grid-template-columns: 1fr 0.8fr 1fr;
+  place-items: center;
+  padding: 12px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .intrest p {
+  color: #033418;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .intrest p span {
+  color: #0ACE5F;
+  font-size: 15px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today {
+  width: 328px;
+  height: 267px;
+  border: 2px solid #F7F9F8;
+  margin: 0 auto;
+  margin-top: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-today_backdrop {
+  height: 60px;
+  background-color: #F7F9F8;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-today_backdrop h3 {
+  color: #033418;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-today_backdrop h3 span {
+  color: #0ACE5F;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-today_backdrop::before, .zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-today_backdrop::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: repeat-x;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-today_backdrop::before {
+  height: 10px;
+  background-size: 20px 20px;
+  background-image: radial-gradient(circle at 10px -5px, transparent 12px, white 13px);
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-today_backdrop::after {
+  height: 15px;
+  background-size: 40px 20px;
+  background-image: radial-gradient(circle at 10px 15px, white 12px, transparent 13px);
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-no {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  padding: 20px 10px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-no .pay1,
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-no .pay2,
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-no .pay3 {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-no .pay1 img,
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-no .pay2 img,
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-no .pay3 img {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-no .pay1 .price,
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-no .pay2 .price,
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-no .pay3 .price {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-no .pay1 .month,
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-no .pay2 .month,
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .pay-no .pay3 .month {
+  font-size: 12px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .emi_info {
+  height: 40px;
+  border-top: 2px solid #F7F9F8;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .pay-today .emi_info p {
+  font-size: 11px;
+  padding: 13px 10px;
+  text-align: center;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .dropdown {
+  border: 1px solid #F5F5F5;
+  border-radius: 60px;
+  width: 200px;
+  margin: 0 auto;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .dropdown p {
+  font-size: 13px;
+  text-align: center;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans {
+  -webkit-animation: neew 0.4s ease-in-out;
+          animation: neew 0.4s ease-in-out;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month {
+  border: 1px solid #F5F5F5;
+  border-radius: 16px;
+  width: 328px;
+  height: 112px;
+  margin: 0 auto;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info1,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info2,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info1,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info2 {
+  padding: 3px 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info .head1,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info .head2,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info1 .head1,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info1 .head2,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info2 .head1,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info2 .head2,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info .head1,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info .head2,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info1 .head1,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info1 .head2,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info2 .head1,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info2 .head2 {
+  color: #033418;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 4px 0px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info .head1 span,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info .head2 span,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info1 .head1 span,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info1 .head2 span,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info2 .head1 span,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info2 .head2 span,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info .head1 span,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info .head2 span,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info1 .head1 span,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info1 .head2 span,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info2 .head1 span,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info2 .head2 span {
+  color: #0ACE5F;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info .dis1,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info1 .dis1,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info2 .dis1,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info .dis1,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info1 .dis1,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info2 .dis1 {
+  text-align: left;
+  margin-bottom: 7px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info .dis2,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info1 .dis2,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info2 .dis2,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info .dis2,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info1 .dis2,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info2 .dis2 {
+  text-align: right;
+  color: #0ACE5F;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info p,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info1 p,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .six-month .info2 p,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info p,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info1 p,
+.zestmoney-backdrop .zestmoney_modal .leftside .emiplans .nine-month .info2 p {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #737373;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .react {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .select {
+  text-align: center;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  margin: 20px 0 20px 0;
+}
+
+.zestmoney-backdrop .zestmoney_modal .leftside .select .highlight {
+  color: #0ACE5F;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .rightside {
+  background: #E2F7EB;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.zestmoney-backdrop .zestmoney_modal .rightside .inner {
+  height: 70%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+}
+
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .user-form {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  padding: 30px 0;
+}
+
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .user-form .info1 {
+  color: #0ACE5F;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .user-form .info2 {
+  font-family: "Tropiline";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .user-form button {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  padding: 12px 10px;
+  border-radius: 64px;
+  background-color: #0ACE5F;
+  width: 230px;
+  font-family: Inter;
+  cursor: pointer;
+}
+
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .features-grid {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .features-grid .onef,
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .features-grid .twof,
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .features-grid .threef,
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .features-grid .fourf {
+  background-color: #fff;
+  background-color: #f3fff8;
+  border-radius: 8px;
+  padding: 20px;
+  border-radius: 8px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: .6fr 1.4fr;
+      grid-template-columns: .6fr 1.4fr;
+  grid-gap: 10px;
+  place-items: center;
+}
+
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .features-grid .onef img,
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .features-grid .twof img,
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .features-grid .threef img,
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .features-grid .fourf img {
+  width: 75%;
+  height: 80%;
+}
+
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .features-grid .onef p,
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .features-grid .twof p,
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .features-grid .threef p,
+.zestmoney-backdrop .zestmoney_modal .rightside .inner .features-grid .fourf p {
+  font-size: 12px;
+  font-weight: 600;
+  color: #000;
+  opacity: 1;
+}
+/*# sourceMappingURL=style.css.map */

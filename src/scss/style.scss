@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tropiline:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        font-family: Inter;
+    }
+}
+
+.widget_trigger {
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    padding: 10px;
+    height: 30px;
+    text-align: left;
+    cursor: pointer;
+}
+
+// ========================== zestmoney-backdrop ===========================
+
+.zestmoney-backdrop {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: grid;
+    place-items: center;
+    animation: appear 0.4s ease-in-out;
+
+    @keyframes appear {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .modal {
+        width: 840px;
+        height: 580px;
+        background-color: #ffffff;
+        border-radius: 15px;
+    }
+
+    .zestmoney_modal {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        overflow: hidden;
+
+        .leftside {
+            position: relative;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 2px;
+                // height: 8px;
+                background-color: #dcdcdc;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: #949494;
+            }
+
+            .close-btn {
+                font-size: 11px;
+                border-radius: 50%;
+                border: 1px solid #737373;
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                width: 20px;
+                height: 20px;
+                padding: 5px;
+                display: grid;
+                place-items: center;
+                cursor: pointer;
+
+                span {
+                    position: absolute;
+                }
+            }
+
+            .logo {
+                display: block;
+                width: 80px;
+                margin: 0 auto;
+                height: 50px;
+                text-align: center;
+                margin-top: 20px;
+                font-size: 1.3rem;
+                color: rgb(0, 220, 0);
+                font-weight: bold;
+            }
+
+            .zestmoney-intro {
+                margin-bottom: 20px;
+                width: 100%;
+                text-align: center;
+                color: #033418;
+                font-family: "Tropiline";
+                font-style: normal;
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            .intrest {
+                width: 347px;
+                height: 46px;
+                background-color: #E2F7EB;
+                border-radius: 32px;
+                display: grid;
+                grid-template-columns: 1fr 0.8fr 1fr;
+                place-items: center;
+                padding: 12px;
+                margin: 0 auto;
+                margin-top: 10px;
+
+                p {
+                    color: #033418;
+                    font-weight: 600;
+                    font-size: 11px;
+
+                    span {
+                        color: #0ACE5F;
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            .pay-today {
+                width: 328px;
+                height: 267px;
+                border: 2px solid #F7F9F8;
+                margin: 0 auto;
+                margin-top: 16px;
+                border-radius: 16px;
+                overflow: hidden;
+
+
+                .pay-today_backdrop {
+                    height: 60px;
+                    background-color: #F7F9F8;
+                    display: grid;
+                    place-items: center;
+                    position: relative;
+
+                    h3 {
+                        color: #033418;
+                        font-weight: 600;
+                        font-size: 18px;
+
+                        span {
+                            color: #0ACE5F;
+                            font-weight: 600;
+                            font-size: 18px;
+                        }
+                    }
+
+                    &::before,
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        background-repeat: repeat-x;
+                    }
+
+                    &::before {
+                        height: 10px;
+                        background-size: 20px 20px;
+                        background-image: radial-gradient(circle at 10px -5px, transparent 12px, white 13px);
+                    }
+
+                    &::after {
+                        height: 15px;
+                        background-size: 40px 20px;
+                        background-image: radial-gradient(circle at 10px 15px, white 12px, transparent 13px);
+                    }
+                }
+
+                .pay-no {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    place-items: center;
+                    padding: 20px 10px;
+
+                    .pay1,
+                    .pay2,
+                    .pay3 {
+                        display: grid;
+                        place-items: center;
+
+                        img {
+                            margin-bottom: 10px;
+                            margin-top: 10px;
+                        }
+
+                        .price {
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+
+                        .month {
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .emi_info {
+                    height: 40px;
+                    border-top: 2px solid #F7F9F8;
+
+                    p {
+                        font-size: 11px;
+                        padding: 13px 10px;
+                        text-align: center
+                    }
+                }
+
+            }
+
+            .dropdown {
+                border: 1px solid #F5F5F5;
+                border-radius: 60px;
+                width: 200px;
+                margin: 0 auto;
+                padding: 10px;
+                margin-top: 10px;
+                cursor: pointer;
+
+                p {
+                    font-size: 13px;
+                    text-align: center;
+                }
+            }
+
+            .emiplans {
+                // border: 2px solid #000;
+                animation: neew 0.4s ease-in-out;
+
+                .six-month,
+                .nine-month {
+                    border: 1px solid #F5F5F5;
+                    border-radius: 16px;
+                    width: 328px;
+                    height: 112px;
+                    margin: 0 auto;
+                    padding: 10px;
+                    margin-top: 10px;
+
+                    .info,
+                    .info1,
+                    .info2 {
+                        padding: 3px 10px;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        // place-items: center;
+
+                        .head1,
+                        .head2 {
+                            color: #033418;
+                            font-weight: 600;
+                            font-size: 12px;
+                            padding: 4px 0px;
+
+                            span {
+                                color: #0ACE5F;
+                            }
+                        }
+
+                        .dis1 {
+                            text-align: left;
+                            margin-bottom: 7px;
+                        }
+
+                        .dis2 {
+                            text-align: right;
+                            color: #0ACE5F;
+                            font-style: normal;
+                            font-weight: 600;
+                        }
+
+                        p {
+                            font-weight: normal;
+                            font-size: 12px;
+                            line-height: 16px;
+                            color: #737373;
+                        }
+                    }
+                }
+            }
+
+            .react {
+                font-size: 13px;
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .select {
+                text-align: center;
+                font-family: Inter;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 13px;
+                line-height: 16px;
+                margin: 20px 0 20px 0;
+
+                .highlight {
+                    color: #0ACE5F;
+                    font-weight: bold;
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .rightside {
+            background: #E2F7EB;
+            display: grid;
+            place-items: center;
+
+            .inner {
+                height: 70%;
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+
+                .user-form {
+                    display: grid;
+                    place-items: center;
+                    padding: 30px 0;
+
+                    .info1 {
+                        color: #0ACE5F;
+                        font-family: Inter;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 16px;
+                        margin-bottom: 20px;
+                    }
+
+                    .info2 {
+                        font-family: "Tropiline";
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 20px;
+                        letter-spacing: 0.5px;
+                        margin-bottom: 20px;
+                    }
+
+                    button {
+                        color: #fff;
+                        font-size: 15px;
+                        font-weight: 600;
+                        border: none;
+                        padding: 12px 10px;
+                        border-radius: 64px;
+                        background-color: #0ACE5F;
+                        width: 230px;
+                        font-family: Inter;
+                        cursor: pointer;
+                    }
+                }
+
+                .features-grid {
+                    display: grid;
+                    place-items: center;
+                    margin: 0 auto;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    grid-gap: 20px;
+                    padding: 20px;
+
+                    .onef,
+                    .twof,
+                    .threef,
+                    .fourf {
+                        background-color: #fff;
+                        background-color: #f3fff8;
+                        border-radius: 8px;
+                        padding: 20px;
+                        border-radius: 8px;
+                        display: grid;
+                        grid-template-columns: .6fr 1.4fr;
+                        grid-gap: 10px;
+                        place-items: center;
+
+                        img {
+                            width: 75%;
+                            height: 80%;
+                        }
+
+                        p {
+                            font-size: 12px;
+                            font-weight: 600;
+                            color: #000;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
