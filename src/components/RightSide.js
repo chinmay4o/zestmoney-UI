@@ -17,28 +17,28 @@ const RightSide = () => {
               {" "}
               <img
                 src="https://partner.zestmoney.in/widget/static/media/rocket-icon.5ab6a2ef.svg"
-                alt=""
+                alt="rocket"
               />{" "}
               <p>Sign up in less than 3 minutes</p>{" "}
             </div>
             <div className="twof">
               <img
                 src="https://partner.zestmoney.in/widget/static/media/card.6b1cfaf7.svg"
-                alt=""
+                alt="card"
               />{" "}
               <p>No credit card needed</p>{" "}
             </div>
             <div className="threef">
               <img
                 src="https://partner.zestmoney.in/widget/static/media/paperless.89af9099.svg"
-                alt=""
+                alt="paper"
               />{" "}
               <p>No paper work needed</p>{" "}
             </div>
             <div className="fourf">
               <img
                 src="https://partner.zestmoney.in/widget/static/media/instant.1687faa0.svg"
-                alt=""
+                alt="light"
               />{" "}
               <p>Instant approval</p>{" "}
             </div>
